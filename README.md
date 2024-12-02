@@ -18,3 +18,4 @@ make test
 | Problem          | Title                           | Difficulty                     | Feelings         |
 | ---------------- | ------------------------------- | ------------------------------ |:----------------:|
 | [Day 01](day_01) | Historian Hysteria              | :star:                         | :shrug:          |
+| [Day 02](day_02) | Red-Nosed Reports               | :star::star:                   | :thinking:       |
