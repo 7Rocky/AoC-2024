@@ -19,3 +19,4 @@ make test
 | ---------------- | ------------------------------- | ------------------------------ |:----------------:|
 | [Day 01](day_01) | Historian Hysteria              | :star:                         | :shrug:          |
 | [Day 02](day_02) | Red-Nosed Reports               | :star::star:                   | :thinking:       |
+| [Day 03](day_03) | Mull It Over                    | :star::star:                   | :rage:           |
