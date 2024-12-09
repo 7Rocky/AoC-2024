@@ -25,3 +25,4 @@ make test
 | [Day 06](day_06) | Guard Gallivant                 | :star::star:                   | :thinking:       |
 | [Day 07](day_07) | Bridge Repair                   | :star::star:                   | :star_struck:    |
 | [Day 08](day_08) | Resonant Collinearity           | :star::star:                   | :shrug:          |
+| [Day 09](day_09) | Disk Fragmenter                 | :star::star:                   | :thinking:       |
