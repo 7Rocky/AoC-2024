@@ -28,7 +28,7 @@ fn find_x_mas(lines: Vec<&str>) -> i32 {
 
 fn main() {
     let input = fs::read_to_string("input.txt").expect("Should have been able to read the file");
-    let lines: Vec<_> = input.trim().split("\n").collect();
+    let lines: Vec<_> = input.trim().lines().collect();
 
     let vertical: Vec<_> = (0..lines[0].len())
         .map(|i| {
