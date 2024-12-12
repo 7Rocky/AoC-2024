@@ -26,3 +26,5 @@ make test
 | [Day 07](day_07) | Bridge Repair                   | :star::star:                   | :star_struck:    |
 | [Day 08](day_08) | Resonant Collinearity           | :star::star:                   | :shrug:          |
 | [Day 09](day_09) | Disk Fragmenter                 | :star::star:                   | :thinking:       |
+| [Day 10](day_10) | Hoof It                         | :star::star:                   | :star_struck:    |
+| [Day 11](day_11) | Plutonian Pebbles               | :star::star::star:             | :rage:           |
