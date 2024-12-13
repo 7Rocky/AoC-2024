@@ -2,46 +2,28 @@ use std::fs;
 
 use std::collections::HashMap;
 
-#[derive(Debug, PartialEq)]
-struct LinkedListNode<T> {
-    value: T,
-    next: Option<Box<LinkedListNode<T>>>,
+struct LinkedListNode {
+    value: u64,
+    next: Option<Box<LinkedListNode>>,
 }
 
-#[derive(Debug, PartialEq)]
-struct LinkedList<T> {
-    head: Option<Box<LinkedListNode<T>>>,
-    tail: Option<*mut LinkedListNode<T>>,
+struct LinkedList {
+    head: Option<Box<LinkedListNode>>,
 }
 
-impl<T> LinkedListNode<T> {
-    fn new(value: T, next: Option<Box<LinkedListNode<T>>>) -> LinkedListNode<T> {
+impl LinkedListNode {
+    fn new(value: u64, next: Option<Box<LinkedListNode>>) -> LinkedListNode {
         LinkedListNode { value, next }
     }
 }
 
-impl<T: PartialEq> LinkedList<T> {
-    fn new() -> LinkedList<T> {
-        LinkedList {
-            head: None,
-            tail: None,
-        }
+impl LinkedList {
+    fn new() -> LinkedList {
+        LinkedList { head: None }
     }
 
-    fn append(&mut self, value: T) {
-        let new_node = Box::new(LinkedListNode::new(value, None));
-
-        unsafe {
-            let raw_node: *mut _ = Box::into_raw(new_node);
-
-            if self.head.is_none() {
-                self.head = Some(Box::from_raw(raw_node));
-            } else if let Some(tail) = self.tail {
-                (*tail).next = Some(Box::from_raw(raw_node));
-            }
-
-            self.tail = Some(raw_node);
-        }
+    fn prepend(&mut self, value: u64) {
+        self.head = Some(Box::new(LinkedListNode::new(value, self.head.take())));
     }
 
     fn len(&mut self) -> usize {
@@ -54,6 +36,15 @@ impl<T: PartialEq> LinkedList<T> {
         }
 
         length
+    }
+}
+
+impl Drop for LinkedList {
+    fn drop(&mut self) {
+        while self.head.is_some() {
+            let mut el = self.head.take().unwrap();
+            self.head = el.next.take();
+        }
     }
 }
 
@@ -74,7 +65,7 @@ fn split_number(s: &str) -> (u64, u64) {
     )
 }
 
-fn blink(stones: &mut LinkedList<u64>) {
+fn blink(stones: &mut LinkedList) {
     let mut current_node = stones.head.as_deref_mut();
 
     while let Some(node) = current_node {
@@ -133,9 +124,9 @@ fn main() {
         .map(|s| s.parse().expect("Invalid integer"))
         .collect();
 
-    let mut stones = Box::new(LinkedList::<u64>::new());
+    let mut stones = Box::new(LinkedList::new());
 
-    numbers.iter().for_each(|&n| stones.append(n));
+    numbers.iter().rev().for_each(|&n| stones.prepend(n));
     (0..25).for_each(|_| blink(&mut stones));
     println!("Stones after blinking 25 times (1): {}", stones.len());
 
