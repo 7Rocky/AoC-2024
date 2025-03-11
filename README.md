@@ -28,3 +28,4 @@ make test
 | [Day 09](day_09) | Disk Fragmenter                 | :star::star:                   | :thinking:       |
 | [Day 10](day_10) | Hoof It                         | :star::star:                   | :star_struck:    |
 | [Day 11](day_11) | Plutonian Pebbles               | :star::star::star:             | :rage:           |
+| [Day 12](day_12) | Garden Groups                   | :star::star::star::star:       | :rage:           |
