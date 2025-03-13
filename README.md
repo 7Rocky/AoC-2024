@@ -29,3 +29,5 @@ make test
 | [Day 10](day_10) | Hoof It                         | :star::star:                   | :star_struck:    |
 | [Day 11](day_11) | Plutonian Pebbles               | :star::star::star:             | :rage:           |
 | [Day 12](day_12) | Garden Groups                   | :star::star::star::star:       | :rage:           |
+| [Day 13](day_13) | Claw Contraption                | :star::star:                   | :shrug:          |
+| [Day 14](day_14) | Restroom Redoubt                | :star::star::star:             | :thinking:       |
